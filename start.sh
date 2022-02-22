@@ -1,11 +1,10 @@
-# finds in the dir if not proceed to download 
-if find Lavalink.jar
-then
-    echo "[Ok] Lavalink already installed.. proceed to check java"
-else
+file=./Lavalink.jar
+if [ -e "$file" ]; then
+    echo "[ok] proceed to check java"
+else 
     wget https://github.com/freyacodes/Lavalink/releases/download/3.4/Lavalink.jar
-    echo "[ok] succesfully installed.. proceed to check java"
-fi
+    echo "Success installed lavalink.jar!"
+fi 
 if ! command -v java &> /dev/null
 then
     echo "[-] installing the java.."
